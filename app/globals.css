@@ -1,0 +1,272 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* SHRUMER FUTURISTIC MOBILE THEME - Light Mode */
+  --background: oklch(0.97 0.005 152); /* Subtle green-tinted background */
+  --foreground: oklch(0.1 0.1 152); /* Near-black with green tint */
+  --card: oklch(0.99 0.002 152); /* Glass-like card background */
+  --card-foreground: oklch(0.1 0.1 152); /* Dark green text */
+  --popover: oklch(0.99 0.002 152); /* Glass popover */
+  --popover-foreground: oklch(0.1 0.1 152); /* Dark text */
+  --primary: oklch(0.1 0.15 152); /* Deep green #002911 */
+  --primary-foreground: oklch(1 0 0); /* Pure white */
+  --secondary: oklch(0.95 0.02 152); /* Light green tint */
+  --secondary-foreground: oklch(0.1 0.15 152); /* Dark green */
+  --muted: oklch(0.96 0.01 152); /* Muted green background */
+  --muted-foreground: oklch(0.35 0.08 152); /* Medium green-gray */
+  --accent: oklch(0.1 0.15 152); /* Accent green */
+  --accent-foreground: oklch(1 0 0); /* White on accent */
+  --destructive: oklch(0.5 0.2 25); /* Alert orange-red */
+  --destructive-foreground: oklch(1 0 0); /* White on destructive */
+  --border: oklch(0.9 0.01 152); /* Subtle green border */
+  --input: oklch(0.99 0.002 152); /* Glass input */
+  --ring: oklch(0.1 0.15 152 / 0.3); /* Focus ring */
+  
+  /* FUTURISTIC COLOR PALETTE */
+  --neon-green: oklch(0.7 0.3 150); /* #00FF9C equivalent */
+  --alert-orange: oklch(0.65 0.25 35); /* #FF6F3C equivalent */
+  --glass-white: oklch(1 0 0 / 0.1); /* Glassmorphism white */
+  --glass-border: oklch(1 0 0 / 0.15); /* Glass border */
+  --dark-charcoal: oklch(0.03 0.005 152); /* #0A0A0A with green tint */
+  --deep-green-tint: oklch(0.08 0.02 152); /* #001A0D equivalent */
+  
+  /* ENHANCED CHART COLORS */
+  --chart-1: oklch(0.1 0.15 152); /* Primary green */
+  --chart-2: oklch(0.7 0.3 150); /* Neon green */
+  --chart-3: oklch(0.65 0.25 35); /* Alert orange */
+  --chart-4: oklch(0.6 0.2 70); /* Warning yellow */
+  --chart-5: oklch(0.5 0.2 25); /* Critical red */
+  
+  --radius: 0.75rem; /* Slightly more rounded for premium feel */
+  --sidebar: oklch(0.98 0.01 152);
+  --sidebar-foreground: oklch(0.1 0.15 152);
+  --sidebar-primary: oklch(0.1 0.15 152);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.02 152);
+  --sidebar-accent-foreground: oklch(0.1 0.15 152);
+  --sidebar-border: oklch(0.9 0.01 152);
+  --sidebar-ring: oklch(0.1 0.15 152 / 0.3);
+  --font-muli: var(--font-mulish);
+}
+
+.dark {
+  /* SHRUMER FUTURISTIC MOBILE THEME - Dark Mode */
+  --background: oklch(0.03 0.005 152); /* Dark charcoal with green tint */
+  --foreground: oklch(0.95 0.02 152); /* Near-white with subtle green */
+  --card: oklch(0.06 0.01 152); /* Dark glass card */
+  --card-foreground: oklch(0.95 0.02 152); /* Light green-white text */
+  --popover: oklch(0.06 0.01 152); /* Dark glass popover */
+  --popover-foreground: oklch(0.95 0.02 152); /* Light text */
+  --primary: oklch(0.7 0.3 150); /* Neon green for dark mode */
+  --primary-foreground: oklch(0.03 0.005 152); /* Dark text on neon */
+  --secondary: oklch(0.12 0.05 152); /* Dark green-gray */
+  --secondary-foreground: oklch(0.85 0.03 152); /* Light green text */
+  --muted: oklch(0.08 0.02 152); /* Deep green-tinted muted */
+  --muted-foreground: oklch(0.6 0.08 152); /* Medium light green */
+  --accent: oklch(0.7 0.3 150); /* Neon green accent */
+  --accent-foreground: oklch(0.03 0.005 152); /* Dark on accent */
+  --destructive: oklch(0.65 0.25 35); /* Alert orange */
+  --destructive-foreground: oklch(0.95 0.02 152); /* Light text */
+  --border: oklch(0.15 0.03 152); /* Dark green border */
+  --input: oklch(0.06 0.01 152); /* Dark glass input */
+  --ring: oklch(0.7 0.3 150 / 0.4); /* Neon green focus ring */
+  
+  /* DARK MODE FUTURISTIC COLORS */
+  --neon-green: oklch(0.7 0.3 150); /* Bright neon green */
+  --alert-orange: oklch(0.65 0.25 35); /* Alert orange */
+  --glass-white: oklch(1 0 0 / 0.05); /* Dark glass white */
+  --glass-border: oklch(1 0 0 / 0.1); /* Dark glass border */
+  --dark-charcoal: oklch(0.03 0.005 152); /* Main dark background */
+  --deep-green-tint: oklch(0.08 0.02 152); /* Deeper green areas */
+  
+  /* DARK MODE CHART COLORS */
+  --chart-1: oklch(0.7 0.3 150); /* Neon green primary */
+  --chart-2: oklch(0.5 0.2 152); /* Medium green */
+  --chart-3: oklch(0.65 0.25 35); /* Alert orange */
+  --chart-4: oklch(0.7 0.25 70); /* Warning yellow */
+  --chart-5: oklch(0.6 0.3 25); /* Critical red */
+  
+  --sidebar: oklch(0.06 0.01 152);
+  --sidebar-foreground: oklch(0.85 0.03 152);
+  --sidebar-primary: oklch(0.7 0.3 150);
+  --sidebar-primary-foreground: oklch(0.03 0.005 152);
+  --sidebar-accent: oklch(0.12 0.05 152);
+  --sidebar-accent-foreground: oklch(0.85 0.03 152);
+  --sidebar-border: oklch(0.15 0.03 152);
+  --sidebar-ring: oklch(0.7 0.3 150 / 0.4);
+  --font-muli: var(--font-mulish);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-muli: var(--font-mulish);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  /* FUTURISTIC COLORS */
+  --color-neon-green: var(--neon-green);
+  --color-alert-orange: var(--alert-orange);
+  --color-glass-white: var(--glass-white);
+  --color-glass-border: var(--glass-border);
+  --color-dark-charcoal: var(--dark-charcoal);
+  --color-deep-green-tint: var(--deep-green-tint);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* GLASSMORPHISM UTILITIES */
+@layer utilities {
+  .glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .glass-header {
+    background: var(--glass-white);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .glass-nav {
+    background: var(--glass-white);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  .glow-neon {
+    box-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
+  }
+  
+  .glow-orange {
+    box-shadow: 0 0 20px var(--alert-orange), 0 0 40px var(--alert-orange);
+  }
+  
+  .glow-subtle {
+    box-shadow: 0 0 10px rgba(0, 255, 156, 0.2);
+  }
+  
+  .mobile-optimized {
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  .plant-breathing {
+    animation: plant-breathe 4s ease-in-out infinite;
+  }
+  
+  .ripple-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ripple-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--neon-green) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .ripple-effect.active::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* MOBILE-FIRST ANIMATIONS */
+@keyframes plant-breathe {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+  50% { 
+    transform: scale(1.02) rotate(0.5deg);
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes metric-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 var(--neon-green);
+  }
+  70% { 
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    opacity: 0.6;
+  }
+  50% { 
+    opacity: 1;
+  }
+}
