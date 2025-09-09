@@ -40,7 +40,7 @@ The application features a dark-themed interface with:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/shrumer-hydroponic-system.git
+git clone https://github.com/Nishantsura/shrumer-hydroponic-system.git
 cd shrumer-hydroponic-system
 ```
 
@@ -85,7 +85,7 @@ shrumer-hydroponic-system/
 
 The easiest way to deploy your Next.js app is to use [Vercel](https://vercel.com):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/shrumer-hydroponic-system)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Nishantsura/shrumer-hydroponic-system)
 
 ## 📄 License
 
