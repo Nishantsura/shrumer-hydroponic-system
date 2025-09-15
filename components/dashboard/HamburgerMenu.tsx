@@ -97,7 +97,7 @@ export function HamburgerMenu({ isOpen, onClose, currentPath = "/" }: HamburgerM
     hidden: { 
       x: "100%",
       transition: { 
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 30
       }
@@ -105,7 +105,7 @@ export function HamburgerMenu({ isOpen, onClose, currentPath = "/" }: HamburgerM
     visible: { 
       x: 0,
       transition: { 
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 30
       }

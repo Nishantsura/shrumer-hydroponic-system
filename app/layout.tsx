@@ -1,31 +1,28 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Mulish } from "next/font/google"
+import { Nunito, Poppins } from "next/font/google"
 import { CompactViewProvider } from "@/contexts/compact-view-context"
+import { AppProvider } from "@/contexts/app-context"
 import "./globals.css"
 
-const geistSans = Geist({
+const nunito = Nunito({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-geist-sans",
+  variable: "--font-nunito",
+  weight: ["300", "400", "500", "600", "700", "800"],
 })
 
-const geistMono = Geist_Mono({
+const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-geist-mono",
-})
-
-const mulish = Mulish({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-mulish",
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700", "800"],
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "Shrumer - Your Farm at Home",
+  description: "Family-friendly hydroponic farming app with colony management and gamification",
+  generator: "Next.js",
 }
 
 export default function RootLayout({
@@ -34,9 +31,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${mulish.variable} antialiased`}>
-      <body>
-        <CompactViewProvider>{children}</CompactViewProvider>
+    <html lang="en" className={`${nunito.variable} ${poppins.variable} dark antialiased`}>
+      <body className="font-nunito">
+        <AppProvider>
+          <CompactViewProvider>{children}</CompactViewProvider>
+        </AppProvider>
       </body>
     </html>
   )

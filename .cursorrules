@@ -1,0 +1,84 @@
+# Shrumer App - Cursor Rules & Development Guidelines
+
+## Project Overview
+Family-friendly hydroponic farming app with colony-centric approach, gamification, and subscription model.
+
+## Design Philosophy
+- **Mood**: Playful + Data-driven (FarmVille meets hydroponics)
+- **Theme**: Dark mode foundation with FarmVille-inspired tiles
+- **Colors**: 
+  - Background: Deep navy/charcoal (#0D1117)
+  - Secondary: Muted green (#1C2B1A) 
+  - Highlight: Neon aqua (#2EE6A8)
+- **Typography**: Rounded, friendly sans-serif (Nunito/Poppins)
+- **Mobile-First**: All components designed for touch interaction
+
+## App Structure (8 Main Screens)
+1. **Onboarding** (`/onboarding`) - Welcome → Setup → Hardware → Plants
+2. **Home Dashboard** (`/dashboard`) - Colony overview cards
+3. **Colony Detail** (`/colony/[id]`) - Sensors, tasks, plant grid
+4. **Plant Detail** (`/plant/[id]`) - Individual plant status
+5. **Tasks & Gamification** (`/tasks`) - Leaderboards, XP, achievements
+6. **Subscriptions** (`/subscriptions`) - Refills, inventory, billing
+7. **Notifications** (`/notifications`) - Alerts, reminders
+8. **Profile & Settings** (`/profile`) - Family, achievements, hardware
+
+## Navigation Pattern
+- **Bottom Navigation**: 5 main tabs (Dashboard, Colonies, Tasks, Subscriptions, Profile)
+- **Secondary Screens**: Accessible through main tabs
+- **Mobile-First**: Touch-friendly, swipe gestures
+
+## Development Rules
+1. **Mobile-First**: Always design for mobile, then adapt
+2. **Component-Based**: Reusable components in `/components`
+3. **Type Safety**: Use TypeScript for all new components
+4. **Dark Mode**: All components must support dark theme
+5. **FarmVille Aesthetic**: Tiles, isometric elements, resource counters
+6. **Progressive Enhancement**: Start simple, add complexity gradually
+
+## File Organization
+```
+/app - Next.js 13+ app router pages
+/components - Reusable UI components
+  /ui - Basic UI components (buttons, cards, etc.)
+  /dashboard - Dashboard-specific components
+  /colony - Colony management components
+  /onboarding - Onboarding flow components
+/lib - Utilities and data
+/contexts - React contexts for state management
+```
+
+## Data Structure
+- **Colonies**: Array of colony objects with sensors, plants, health
+- **Plants**: Individual plant data with growth stages, health scores
+- **Tasks**: Actionable items with XP rewards
+- **Family**: Member profiles with achievements and XP
+- **Subscriptions**: Inventory and billing information
+
+## Component Naming
+- Use PascalCase for components: `ColonyCard.tsx`
+- Use kebab-case for pages: `colony/[id]/page.tsx`
+- Prefix with purpose: `ColonyStatus.tsx`, `PlantHealth.tsx`
+
+## State Management
+- Use React Context for global state (colonies, user, notifications)
+- Local state for component-specific data
+- Mock data in `/lib/data.ts` for development
+
+## Testing Strategy
+- Test each component in isolation
+- Verify mobile responsiveness
+- Check dark mode compatibility
+- Validate navigation flow
+
+## Performance
+- Lazy load heavy components
+- Optimize images and animations
+- Use Next.js Image component
+- Minimize bundle size
+
+## Accessibility
+- Proper ARIA labels
+- Keyboard navigation support
+- High contrast ratios
+- Screen reader compatibility

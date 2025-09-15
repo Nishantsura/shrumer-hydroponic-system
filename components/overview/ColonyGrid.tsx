@@ -2,13 +2,15 @@
 
 import React from "react"
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { 
   Power, 
   Droplets, 
   Gauge, 
   Settings,
   AlertTriangle,
-  CheckCircle
+  CheckCircle,
+  ArrowRight
 } from "lucide-react"
 import { GlassCard } from "@/components/ui/glass-card"
 import { Badge } from "@/components/ui/badge"
@@ -69,13 +71,14 @@ export function ColonyGrid({ colonies }: ColonyGridProps) {
                 transition: { duration: 0.2 }
               }}
             >
-              <GlassCard 
-                className="p-6 h-full relative overflow-hidden cursor-pointer"
-                glow={colony.hasAlerts ? "orange" : colony.status === "active" ? "subtle" : "none"}
-              >
+              <Link href={`/colony/${colony.id}`}>
+                <GlassCard 
+                  className="p-6 h-full relative overflow-hidden cursor-pointer group"
+                  glow="none"
+                >
                 {/* Background Pattern */}
                 <motion.div
-                  className={`absolute inset-0 opacity-5 bg-${colony.statusColor}`}
+                  className="absolute inset-0 opacity-5 bg-white/10"
                   animate={colony.status === "active" ? {
                     opacity: [0.05, 0.1, 0.05]
                   } : {}}
@@ -92,21 +95,21 @@ export function ColonyGrid({ colonies }: ColonyGridProps) {
                       {colony.location}
                     </p>
                     <Badge 
-                      className={`bg-${colony.statusColor}/20 text-${colony.statusColor} border-${colony.statusColor}/30 text-xs`}
+                      className="bg-white/20 text-white border-white/30 text-xs"
                     >
                       {getStatusText(colony.status)}
                     </Badge>
                   </div>
                   
                   <motion.div
-                    className={`p-2 rounded-lg bg-${colony.statusColor}/20`}
+                    className="p-2 rounded-lg bg-white/20"
                     animate={colony.hasAlerts ? {
                       scale: [1, 1.1, 1],
                       opacity: [0.8, 1, 0.8]
                     } : {}}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    <StatusIcon className={`h-5 w-5 text-${colony.statusColor}`} />
+                    <StatusIcon className="h-5 w-5 text-white" />
                   </motion.div>
                 </div>
 
@@ -214,7 +217,20 @@ export function ColonyGrid({ colonies }: ColonyGridProps) {
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                 )}
-              </GlassCard>
+
+                {/* View Details Button */}
+                <motion.div
+                  className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileHover={{ y: 0 }}
+                >
+                  <div className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
+                    <span>View Details</span>
+                    <ArrowRight className="h-3 w-3" />
+                  </div>
+                </motion.div>
+                </GlassCard>
+              </Link>
             </motion.div>
           )
         })}
